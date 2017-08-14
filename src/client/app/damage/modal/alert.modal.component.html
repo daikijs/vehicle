@@ -1,0 +1,45 @@
+<div class="text-center damage-alert-modal">
+  <div class="select-damage modal-wrapper" *ngIf="!modalType">
+    <div class="home-heading modal-header">
+      Selecting your Damage
+    </div>
+
+    <div class="modal-body">
+      <div class="description">
+Touch the damaged part(s) of your vehicle on the next screen. If your vehicle has more than one damaged part, follow the prompts until all parts are selected.
+      </div>
+
+      <div class="img-area">
+        <img src="assets/img/3-circle.png" class="circle-img" [style.left.px]="circleImgLeft">
+        <img src="assets/img/hand.png"  class="hand-img" [style.left.px]="handImgLeft">
+      </div>
+    </div>
+
+    <div class="modal-action-area">
+      <a class="btn" (click)="onCancel()">Begin</a>
+    </div>
+  </div>
+
+  <div class="more-damage modal-wrapper" *ngIf="modalType">
+    <div class="home-heading modal-header">
+      Add More Damage
+    </div>
+
+    <div class="modal-body">
+      <div class="description">
+        You have completed all the questions for your vehicle damaged part(s).
+      </div>
+
+      <div class="img-area">
+        <img src="assets/img/3-circle.png" class="circle-img" [style.left.px]="circleImgLeft">
+        <img src="assets/img/hand.png"  class="hand-img" [style.left.px]="handImgLeft">
+      </div>
+    </div>
+
+    <div class="button-area">
+      <a class="btn btn-warning" (click)="onCancel()">I have More Damage</a>
+      <a class="btn btn-primary" (click)="next()">I have No Additional Damage</a>
+    </div>
+  </div>
+
+</div>

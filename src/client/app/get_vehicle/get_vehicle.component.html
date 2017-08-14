@@ -1,0 +1,80 @@
+<div class="scrollable" *ngIf="!pageLoading">
+  <div class="scrollable-content home">
+    <div class="list-group">
+      <div class="list-group-item-home vehicle-model-wrapper">
+
+        <div class="vehicle-model-body">
+          <form #vinForm="ngForm" validate class="vin-form">
+          	<fieldset>
+          		<div class="form-group has-feedback">
+          			<h3 class="home-heading text-center">Enter your VIN#</h3>
+                <input type="text" class="form-control full-width" name="vincode" id="vincode" placeholder="VIN #" [ngModel]="vincode" vincode="ngModel" pattern="^[A-Z0-9]{17}$" [value] ="vincodeValue" (keyup)="keypressVin($event.target.value, vinForm)">
+                  <small class="-underline">
+                    <a (click)="onVin()">How do I find my VIN?</a>
+                  </small>
+                <small *ngIf="vincodeNumberError" class="text-danger">Vincode should be alphanumberic and length should be 17.</small>
+          		</div>
+          	</fieldset>
+          </form>
+
+          <form [formGroup]="getVehicleForm" (ngSubmit)="loadClaim()" validate class="vin-form">
+            <fieldset>
+              <div class="form-group has-feedback">
+                <h3 class="home-heading text-center">Enter Year, Make & Model</h3>
+                <ng-select
+                formControlName="year"
+                name="year"
+                [options]="years"
+                (selected)="onYearsSelected($event)"
+                placeholder="Year">
+                </ng-select>
+              </div>
+
+              <div class="form-group has-feedback">
+                <div class="select-overlay" [ngClass]="{'disable': claimMakeDisabled}"></div>
+                <ng-select
+                formControlName="make"
+                name="make"
+                [options]="makes"
+                (selected)="onMakesSelected($event)"
+                [placeholder]="'Make'">
+                </ng-select>
+              </div>
+              
+              <div class="form-group has-feedback">
+                <div class="select-overlay" [ngClass]="{'disable': claimModelDisabled}"></div>
+                <ng-select
+                formControlName="model"
+                name="model"
+                [options]="models"
+                (selected)="onModelsSelected($event)"
+                [placeholder]="'Model'">
+                </ng-select>
+              </div>
+              
+              <div class="form-group has-feedback">
+                <div class="select-overlay" [ngClass]="{'disable': claimCategoryDisabled}"></div>
+                <ng-select
+                formControlName="category"
+                name="category"
+                [options]="categories"
+                (selected)="onCategoriesSelected($event)"
+                [placeholder]="'Category'">
+                </ng-select>
+              </div>
+
+              <div class="alert alert-danger" *ngIf="isVinErrorAlert">
+                Please <strong>enter</strong> a 17-digit VIN #.
+              </div>
+
+              <button class="btn btn-primary btn-block" *ngIf="nextAvailable>=2">
+                Next
+              </button>  
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

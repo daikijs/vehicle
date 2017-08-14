@@ -1,0 +1,11 @@
+.modal-dialog {
+	padding: 1em;
+}
+
+.modal-dialog .home-heading {
+  color: #007aff;
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 20px; 
+}
+

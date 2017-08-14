@@ -1,0 +1,12 @@
+<div class="map-area" *ngIf="carImgLaod">
+  <div id="car_bg_wrap">
+  	<image-map
+  	[mapData]="carMapData"
+    [mapProperties]="carMapProperties"
+    [bPreShowDamages]="false"
+    [mapStyle] = "carMapStyle"
+    [bCarmap]="true"
+    (doneAutoPart)="doneAutoPart()"
+    (clickOnImage)="clickOnImage($event)"></image-map>
+  </div> 
+</div>

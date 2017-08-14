@@ -1,0 +1,5 @@
+<div class="map-area" *ngIf="mapImgLaod">
+  <img src="{{imgSrc}}" id="{{imageMapId}}_image_map" (load)="loadImg()">
+  <canvas id="{{imageMapId}}_image_canvas" class="effect_canvas"></canvas>
+  <canvas id="{{imageMapId}}_effect_canvas" class="effect_canvas" (click)="canvasClick($event)"></canvas>
+</div>

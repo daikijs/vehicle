@@ -1,0 +1,19 @@
+.damage-level-wrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.damage-level-wrapper .barChart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2px;
+  background: blue;
+  color: #fff;
+  padding: 5px 0;
+}
+
+.damage-level-wrapper .barChart.active {
+  border: 2px solid #333;
+}

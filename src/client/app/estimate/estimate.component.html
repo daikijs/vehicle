@@ -1,0 +1,20 @@
+<div class="scrollable home" *ngIf="loading">
+  <div class="scrollable-content text-center estimate-wrapper flex-wrapper">
+    <div class="estimate-header" *ngIf="isDotSlider">
+      <dot-slider
+      [sliderCount]="totalStep"
+      [currentSliderCounter]="currentStep"
+      ></dot-slider>
+    </div>
+
+    <div class="estimate-body">
+      <!-- <div [innerHtml]='estimateData'></div>   -->
+    </div>
+
+    <div class="blue-btn-wrapper" *ngIf="isButtons">
+      <a class="btn btn-primary btn-block" (click)="next()">
+        Next
+      </a>               
+    </div>
+  </div>
+</div>

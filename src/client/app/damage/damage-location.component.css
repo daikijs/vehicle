@@ -1,0 +1,14 @@
+.damgage-location {
+  position: relative;
+}
+
+#damage_img {
+  display: none;
+}
+
+#damgage_effect_canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0.5;
+}

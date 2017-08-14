@@ -1,0 +1,36 @@
+<div class="show-img-modal-area modal-wrapper flex-wrapper">
+	<div class="close" (click)="onCancel()" *ngIf="currentStatus === STATUSES[0]">
+    	<i class="fa fa-times-circle" aria-hidden="true"></i>
+    </div>
+
+    <div class="modal-header">
+    	{{title}}
+    </div>
+
+    <div class="modal-body">
+    	<img [src]="imgURL" *ngIf="currentStatus === STATUSES[0]">
+  		<div class="progress" *ngIf="currentStatus === STATUSES[1]">
+  			<div class="progress-bar" role="progressbar" #fileProgress></div>
+  		</div>
+  		<div class="done-icon" *ngIf="currentStatus === STATUSES[2]">
+  			<i class="fa fa-check-circle success" aria-hidden="true" *ngIf="isSuccessResult"></i>
+  			<i class="fa fa-times-circle error" aria-hidden="true" *ngIf="!isSuccessResult"></i>
+  		</div>
+    </div>
+
+    <div class="modal-action-area">
+    	<div class="upload-action-wrapper" *ngIf="currentStatus === STATUSES[0]" (click)="fileUpload.click()">
+    		<img src="assets/img/upload.png" class="upload-icon">
+	  		<input type="file" ng2FileSelect [uploader]="uploader" id="upload_replace_photo" class="hide" #fileUpload />
+	  		<div class="upload-title">Replace</div>
+    	</div>
+
+	  	<div class="waiting-btn upload-action-wrapper" *ngIf="currentStatus === STATUSES[1]">
+	  		Uploading ...
+	  	</div>
+
+	  	<div class="done-btn pointer upload-action-wrapper" *ngIf="currentStatus === STATUSES[2]" (click)="onClose()" [ngClass]="{'text-danger': isSuccessResult}">
+	  		{{endBtnString}}
+	  	</div>
+    </div>
+</div>

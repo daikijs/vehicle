@@ -1,0 +1,54 @@
+:host {
+  background-color: #FFF;
+  color: rgba(255, 255, 255, 0.87);
+  display: block;
+  padding: 0 16px;
+}
+.navbar-app {
+  background-color: #FFF;
+}
+.navbar-app.navbar-absolute-top {
+  height: 70px;
+}
+
+h1 {
+  display: inline;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 0.1px;
+  line-height: 48px;
+}
+
+.more {
+  background: url("./assets/svg/more.svg");
+  float: right;
+  height: 24px;
+  margin-top: 12px;
+  width: 24px;
+}
+
+.navbar-app img.navbar-img {
+  height: 35px;
+}
+
+.navbar-app .navbar-brand {
+  padding: 0;
+}
+
+.navbar-app .navbar-brand-center img.navbar-img {
+  margin: auto;
+}
+
+.navbar-app .live-help-link,
+.navbar-app .help-link {
+  padding: 0 17px;
+}
+
+.navbar-app .navbar-brand-center,
+.navbar-app .pull-left,
+.navbar-app .pull-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}

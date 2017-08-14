@@ -1,0 +1,14 @@
+.map-area {
+  position: relative;
+  display: inline-block;
+}
+
+#image_map {
+  display: none;
+}
+
+.effect_canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="<%= APP_BASE %>">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= APP_TITLE %></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/fonts/videogular.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body>
+
+  <sd-app>
+    <div class="app-content-loading">
+      <i class="fa fa-spinner fa-spin loading-spinner"></i>
+    </div>
+  </sd-app>
+
+  <script>
+  // Fixes undefined module function in SystemJS bundle
+  function module() {}
+  </script>
+
+  <!-- begin olark code -->
+  <script type="text/javascript" async>
+  ;(function(o,l,a,r,k,y){if(o.olark)return;
+  r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];
+  y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);
+  y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)};
+  y.extend=function(i,j){y("extend",i,j)};
+  y.identify=function(i){y("identify",k.i=i)};
+  y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
+  k=y._={s:[],t:[+new Date],c:{},l:a};
+  })(window,document,"static.olark.com/jsclient/loader.js");
+  /* Add configuration calls bellow this comment */
+  olark.identify('6932-791-10-9647');</script>
+  <!-- end olark code -->
+
+  <!-- shims:js -->
+  <!-- endinject -->
+  
+  <% if (BUILD_TYPE === 'dev') { %>
+  <script src="<%= APP_BASE %>app/system-config.js"></script>
+  <% } %>
+
+  <!-- libs:js -->
+  <!-- endinject -->
+  <!-- inject:js -->
+  <!-- endinject -->
+  <% if (BUILD_TYPE === 'dev') { %>
+  <script>
+  System.import('<%= BOOTSTRAP_MODULE %>')
+    .catch(function (e) {
+      console.error(e.stack || e,
+        'Not expecting this error? Report it at https://github.com/mgechev/angular-seed/issues');
+    });
+  </script>
+  <% } %>
+  
+</body>
+</html>
